@@ -1,6 +1,7 @@
 
 using UnityEngine;
 using TMPro;
+using System.Collections.Generic;
 
 public class FPSCounter : MonoBehaviour
 {
@@ -21,19 +22,16 @@ public class FPSCounter : MonoBehaviour
         if (time >= pollingTime)
         {
             int frameRate = Mathf.RoundToInt(frameCount / time);
-            float milisecondsPerFrame = 1000.0f / frameRate;
+            float millisecondsPerFrame = 1000.0f / frameRate;
 
             // Display FPS
             FpsText.text = frameRate.ToString() + " FPS";
 
             // Display miliseconds per frame
-            msPerFrameText.text = milisecondsPerFrame.ToString("F2") + " ms/frame";
+            msPerFrameText.text = millisecondsPerFrame.ToString("F2") + " ms/pf";
 
             time -= pollingTime;
             frameCount = 0;
-
-            
         }
     }
-
 }
